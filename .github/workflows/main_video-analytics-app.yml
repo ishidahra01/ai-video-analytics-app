@@ -26,9 +26,6 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-      
-      - name: Install dependencies
-        run: |
           cd src
           pip install -r requirements.txt
         
