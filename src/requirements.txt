@@ -1,0 +1,13 @@
+streamlit
+requests
+opencv-python
+Pillow
+python-dotenv
+openai
+pandas
+azure-identity
+azure-storage-blob
+setuptools 
+wheel 
+pygame
+ipywidgets
