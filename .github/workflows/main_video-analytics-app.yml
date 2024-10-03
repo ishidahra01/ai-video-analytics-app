@@ -28,12 +28,14 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          cd src
+          pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip release.zip ./src/* -r
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
@@ -59,9 +61,8 @@ jobs:
           name: python-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: unzip release.zip -d ./src
 
-      
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -75,4 +76,3 @@ jobs:
         with:
           app-name: 'video-analytics-app'
           slot-name: 'Production'
-          
