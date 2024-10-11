@@ -11,3 +11,12 @@ setuptools
 wheel 
 pygame
 ipywidgets
+matplotlib
+openai
+azure-identity
+python-dotenv
+isodate
+tiktoken
+moviepy>=1.0.3
+pandas
+tenacity
